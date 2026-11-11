@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/YapgZpEE87fnHWFSfSRe/media/69fb0886247534830e865fd1.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UpScaler HQ - You're In</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black:   #000000;
+    --card:    #0a0a0a;
+    --line:    rgba(255,255,255,0.08);
+    --line-c:  rgba(0,212,220,0.25);
+    --cyan:    #00d4dc;
+    --white:   #f5f7f8;
+    --sub:     rgba(245,247,248,0.68);
+    --muted:   rgba(245,247,248,0.42);
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+  .cyan { color: var(--cyan); }
+
+  h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; letter-spacing: -0.01em; }
+
+  .pill {
+    display: inline-block;
+    border: 1px solid var(--line-c);
+    color: var(--cyan);
+    border-radius: 100px;
+    padding: 0.35rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.4rem;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--cyan);
+    color: #000;
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 1rem 2.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  .btn:hover { opacity: 0.88; }
+
+  .fine { font-size: 0.78rem; color: var(--muted); margin-top: 1rem; }
+
+  section { padding: 5rem 0; border-top: 1px solid var(--line); }
+  .center { text-align: center; }
+  .section-title { font-size: clamp(1.7rem, 3.6vw, 2.5rem); line-height: 1.15; margin-bottom: 0.8rem; }
+  .section-sub { color: var(--sub); font-size: 0.98rem; max-width: 560px; margin: 0 auto 2.8rem; }
+
+  /* HERO */
+  .hero { padding: 4rem 0 3rem; text-align: center; border-top: none; }
+  .logo { height: 48px; width: auto; display: block; margin: 0 auto 2.4rem; }
+  .hero h1 { font-size: clamp(2.2rem, 5.4vw, 3.9rem); line-height: 1.1; margin-bottom: 1.4rem; }
+  .hero p.lead { font-size: 1.05rem; color: var(--sub); max-width: 600px; margin: 0 auto 2.2rem; }
+
+  /* VSL */
+  .vsl { max-width: 720px; margin: 0 auto; }
+  .placeholder {
+    border: 1px dashed var(--line-c);
+    border-radius: 12px;
+    background: var(--card);
+    color: var(--muted);
+    font-size: 0.85rem;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .vsl .placeholder { aspect-ratio: 16 / 9; }
+  .vsl wistia-player { display: block; width: 100%; border-radius: 12px; overflow: hidden; }
+
+  /* STEPS */
+  .steps { display: flex; flex-direction: column; gap: 1rem; text-align: left; }
+  .step {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+  }
+  .step.key { border-color: var(--line-c); }
+  .step-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.7rem; }
+  .step-num {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    border: 1px solid var(--line-c);
+    border-radius: 8px;
+    color: var(--cyan);
+    font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.95rem;
+  }
+  .step h3 { font-size: 1.2rem; line-height: 1.3; }
+  .step p { color: var(--sub); font-size: 0.92rem; }
+  .step p + p { margin-top: 0.6rem; }
+  .step strong { color: var(--white); }
+  .form-slot { margin-top: 1.4rem; }
+  .form-slot .placeholder { min-height: 420px; }
+  .form-slot iframe { width: 100%; border: none; display: block; }
+
+  /* WHAT YOU GET */
+  .get-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: var(--line);
+    border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+    text-align: left;
+  }
+  .get-item { background: var(--card); padding: 1.6rem 1.8rem; }
+  .get-item h3 { font-size: 1rem; margin-bottom: 0.4rem; font-family: 'Manrope', sans-serif; font-weight: 800; }
+  .get-item h3::before { content: '\2713'; color: var(--cyan); margin-right: 0.6rem; }
+  .get-item p { color: var(--sub); font-size: 0.88rem; }
+
+  .cost {
+    margin-top: 1.5rem;
+    border: 1px solid var(--line-c);
+    border-radius: 12px;
+    background: var(--card);
+    text-align: left;
+    overflow: hidden;
+  }
+  .cost-row { display: flex; justify-content: space-between; gap: 1rem; padding: 1.1rem 1.8rem; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+  .cost-row:last-child { border-bottom: none; }
+  .cost-row span:first-child { color: var(--sub); }
+  .cost-row span:last-child { font-weight: 800; text-align: right; }
+  .cost-note { padding: 1rem 1.8rem; font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--line); }
+
+  /* PORTFOLIO */
+  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .work-grid .placeholder { aspect-ratio: 4 / 5; }
+
+  /* NOTE */
+  .note { max-width: 640px; margin: 0 auto; text-align: left; }
+  .note p { color: var(--sub); font-size: 0.98rem; margin-bottom: 1.1rem; }
+  .note p strong { color: var(--white); }
+  .note .sign { color: var(--white); font-weight: 700; margin-top: 1.6rem; }
+
+  /* FAQ */
+  .faq { text-align: left; max-width: 720px; margin: 0 auto; }
+  .faq-item { padding: 1.4rem 0; border-bottom: 1px solid var(--line); }
+  .faq-item:first-child { border-top: 1px solid var(--line); }
+  .faq-q { font-weight: 800; font-size: 0.98rem; margin-bottom: 0.5rem; }
+  .faq-a { color: var(--sub); font-size: 0.9rem; }
+
+  /* FINAL CTA */
+  .final h2 { font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1.12; max-width: 680px; margin: 0 auto 1rem; }
+  .final p { color: var(--sub); max-width: 500px; margin: 0 auto 2rem; }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--line); padding: 2.4rem 0; text-align: center; }
+  footer img { height: 34px; width: auto; margin-bottom: 1.2rem; }
+  footer p { font-size: 0.72rem; color: var(--muted); max-width: 680px; margin: 0 auto 0.6rem; line-height: 1.6; }
+
+  @media (max-width: 760px) {
+    section { padding: 3.5rem 0; }
+    .hero { padding: 3rem 0 2rem; }
+    .step { padding: 1.4rem 1.3rem; }
+    .get-grid { grid-template-columns: 1fr; }
+    .work-grid { grid-template-columns: 1fr; }
+    .cost-row { padding: 1rem 1.3rem; }
+    .cost-note { padding: 1rem 1.3rem; }
+  }
+
+  /* FORM CARD (landing) */
+  .form-section { border-top: none; padding-top: 0; }
+  .form-card { max-width: 640px; margin: 0 auto; background: var(--card); border: 1px solid var(--line-c); border-radius: 14px; padding: 2.2rem 2rem; }
+  .form-title { font-size: 1.5rem; line-height: 1.2; margin-bottom: 0.4rem; }
+  .form-sub { color: var(--sub); font-size: 0.92rem; }
+  .form-card .form-slot .placeholder { min-height: 460px; }
+
+  /* ALERT LINE (confirmation) */
+  .alert { font-size: 0.92rem; color: var(--sub); margin: -0.8rem auto 2.2rem; max-width: 560px; }
+  .alert .cyan { font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.82rem; }
+
+  @media (max-width: 760px) {
+    .form-card { padding: 1.6rem 1.2rem; }
+  }
+</style>
+
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <img class="logo" src="https://assets.cdn.filesafe.space/YapgZpEE87fnHWFSfSRe/media/69f5b189dd67e758c09fe4ad.png" alt="UpScaler HQ">
+
+    <p class="pill">Your free website is claimed</p>
+
+    <h1>You're in. <span class="cyan">Now keep your phone close.</span></h1>
+
+    <p class="lead">We'll be in touch shortly to lock in your build. Usually that's a quick call, but if the team's tied up, we'll send you a message instead.</p>
+
+    <p class="alert"><span class="cyan">Do this now:</span> take your phone off silent and turn Do Not Disturb off.</p>
+
+    <div class="vsl">
+      <!-- ============================================================
+           WISTIA VSL GOES HERE
+           Get the embed from Wistia: Video Actions > Embed & Share > Inline Embed.
+           The media-id is 10 characters. A /s/ share-link ID will NOT work.
+           Paste it in place of the placeholder div, e.g.:
+
+           <script src="https://fast.wistia.com/player.js" async></script>
+           <script src="https://fast.wistia.com/embed/XXXXXXXXXX.js" async type="module"></script>
+           <wistia-player media-id="XXXXXXXXXX" aspect="1.7777777777777777"></wistia-player>
+           ============================================================ -->
+      <div class="placeholder">VSL placeholder (Wistia embed goes here)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STEPS ============ -->
+<section>
+  <div class="wrap center">
+    <p class="pill">What happens next</p>
+    <h2 class="section-title">Four steps to your <span class="cyan">new website.</span></h2>
+    <p class="section-sub">You've done the hard part. Here's how the rest goes.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-head"><div class="step-num">1</div><h3>Watch the video above</h3></div>
+        <p>It covers exactly what you get, what it costs you, and why we build it for free. Watch it before we speak so there are no surprises.</p>
+      </div>
+
+      <div class="step key">
+        <div class="step-head"><div class="step-num">2</div><h3>Keep an eye on your phone</h3></div>
+        <p>We'll be in touch shortly with a <strong>quick call</strong> to lock in your services, the look you want, and the jobs you want more of.</p>
+        <p>If our team's on other calls, we'll send you a message to find a time that suits. Either way, it might come from a number you don't recognise. That's us.</p>
+        <p>Builds go in the order we speak to people.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-head"><div class="step-num">3</div><h3>Set up your Base44 plan</h3></div>
+        <p>Base44 is where your website lives. The account is <strong>in your name</strong>, so the site is yours from day one, not ours. We'll walk you through the setup on the call.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-head"><div class="step-num">4</div><h3>Approve it and go live</h3></div>
+        <p>We build the site, send it over for your feedback, make the changes, then launch it on your domain. You don't touch a single line of code.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COST ============ -->
+<section>
+  <div class="wrap center">
+    <p class="pill">What it costs</p>
+    <h2 class="section-title">One cost. <span class="cyan">And it's not to us.</span></h2>
+    <p class="section-sub">Here's the full breakdown, so you know exactly what you're signing up for before we speak.</p>
+
+    <!-- ============================================================
+         CONFIRM BEFORE GOING LIVE: which Base44 plan you put clients on
+         and its current price on base44.com/pricing. Third-party sources
+         list Builder at about US$50/month (US$40/month billed annually).
+         ============================================================ -->
+    <div class="cost">
+      <div class="cost-row"><span>Website design and build</span><span class="cyan">$0</span></div>
+      <div class="cost-row"><span>Copywriting, setup and launch</span><span class="cyan">$0</span></div>
+      <div class="cost-row"><span>Your Base44 plan (hosting, paid straight to Base44)</span><span>From US$50/month</span></div>
+      <p class="cost-note">That's the only cost. It goes to Base44, not to us, and it's what keeps your site live and in your name.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY FREE ============ -->
+<section>
+  <div class="wrap">
+    <div class="center"><p class="pill">The catch</p>
+    <h2 class="section-title">So why is it <span class="cyan">free?</span></h2></div>
+
+    <div class="note" style="margin-top:2rem;">
+      <p>Fair question. Here's the straight answer.</p>
+      <p>We're a Base44 partner. <strong>When you sign up for a Base44 plan through us, Base44 pays us a referral fee.</strong> That covers the cost of building your site. It doesn't add anything to what you pay.</p>
+      <p>The other reason: we're a marketing agency. We run ads for automotive businesses. A good website with no one seeing it doesn't do much, so some of the shops we build for end up asking us to run ads to it.</p>
+      <p><strong>If you want that later, great. If you don't, you keep the site anyway.</strong> No pressure, no obligation.</p>
+      <p class="sign">Zack, UpScaler HQ</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BASE44 FAQ ============ -->
+<section>
+  <div class="wrap center">
+    <p class="pill">About Base44</p>
+    <h2 class="section-title">Quick <span class="cyan">answers.</span></h2>
+
+    <div class="faq" style="margin-top:2.4rem;">
+      <div class="faq-item">
+        <p class="faq-q">What is Base44?</p>
+        <p class="faq-a">It's the platform your website is built and hosted on. Think of it like paying for hosting, except the account and everything in it belongs to you.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Why can't you just host it for me?</p>
+        <p class="faq-a">We could, but then you'd be renting your website from us. This way it's in your name. If you ever stop working with us, nothing changes.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What happens if I cancel Base44?</p>
+        <p class="faq-a">Your site is hosted on Base44, so if you cancel the plan, the site comes down. Same as cancelling hosting anywhere else.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Do I pay anything on the call?</p>
+        <p class="faq-a">Not to us. If you decide to go ahead, you'll set up your Base44 plan directly with Base44, and we'll walk you through it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="https://assets.cdn.filesafe.space/YapgZpEE87fnHWFSfSRe/media/69f5b189dd67e758c09fe4ad.png" alt="UpScaler HQ">
+    <p>UpScaler HQ is an independent Base44 referral partner and receives a referral fee when you sign up for a Base44 plan through us. UpScaler HQ is not owned by or affiliated with Base44. Base44 is a trademark of its respective owner. Base44 plan pricing is set by Base44, may change, and is billed in USD.</p>
+    <p>Results depend on your market, services and how the site is used. A website on its own does not guarantee enquiries or bookings.</p>
+    <p>UpScaler HQ &middot; ABN 66 881 970 550</p>
+  </div>
+</footer>
+
+</body>
+</html>
