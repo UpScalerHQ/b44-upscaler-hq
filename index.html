@@ -326,19 +326,17 @@
 
     <p class="alert"><span class="cyan">Do this now:</span> take your phone off silent and turn Do Not Disturb off.</p>
 
-    <div class="vsl">
-      <!-- ============================================================
-           WISTIA VSL GOES HERE
-           Get the embed from Wistia: Video Actions > Embed & Share > Inline Embed.
-           The media-id is 10 characters. A /s/ share-link ID will NOT work.
-           Paste it in place of the placeholder div, e.g.:
-
+    <!-- ============ VSL (OFF FOR NOW) ============
+         To turn the video back on, paste the block below back in right here,
+         and swap XXXXXXXXXX for the 10-character Wistia media-id
+         (Wistia: Video Actions > Embed & Share > Inline Embed. A /s/ share-link ID won't work).
+         Also put step "Watch the video above" back as step 1 (it is saved in a comment in the steps section).
+         <div class="vsl">
            <script src="https://fast.wistia.com/player.js" async></script>
            <script src="https://fast.wistia.com/embed/XXXXXXXXXX.js" async type="module"></script>
            <wistia-player media-id="XXXXXXXXXX" aspect="1.7777777777777777"></wistia-player>
-           ============================================================ -->
-      <div class="placeholder">VSL placeholder (Wistia embed goes here)</div>
-    </div>
+         </div>
+    ============================================= -->
   </div>
 </section>
 
@@ -346,29 +344,31 @@
 <section>
   <div class="wrap center">
     <p class="pill">What happens next</p>
-    <h2 class="section-title">Four steps to your <span class="cyan">new website.</span></h2>
+    <h2 class="section-title">Three steps to your <span class="cyan">new website.</span></h2>
     <p class="section-sub">You've done the hard part. Here's how the rest goes.</p>
 
     <div class="steps">
+      <!-- STEP FOR WHEN THE VSL IS BACK ON (put it first and renumber):
       <div class="step">
         <div class="step-head"><div class="step-num">1</div><h3>Watch the video above</h3></div>
         <p>It covers exactly what you get, what it costs you, and why we build it for free. Watch it before we speak so there are no surprises.</p>
       </div>
+      -->
 
       <div class="step key">
-        <div class="step-head"><div class="step-num">2</div><h3>Keep an eye on your phone</h3></div>
+        <div class="step-head"><div class="step-num">1</div><h3>Keep an eye on your phone</h3></div>
         <p>We'll be in touch shortly with a <strong>quick call</strong> to lock in your services, the look you want, and the jobs you want more of.</p>
         <p>If our team's on other calls, we'll send you a message to find a time that suits. Either way, it might come from a number you don't recognise. That's us.</p>
         <p>Builds go in the order we speak to people.</p>
       </div>
 
       <div class="step">
-        <div class="step-head"><div class="step-num">3</div><h3>Set up your Base44 plan</h3></div>
+        <div class="step-head"><div class="step-num">2</div><h3>Set up your Base44 plan</h3></div>
         <p>Base44 is where your website lives. The account is <strong>in your name</strong>, so the site is yours from day one, not ours. We'll walk you through the setup on the call.</p>
       </div>
 
       <div class="step">
-        <div class="step-head"><div class="step-num">4</div><h3>Approve it and go live</h3></div>
+        <div class="step-head"><div class="step-num">3</div><h3>Approve it and go live</h3></div>
         <p>We build the site, send it over for your feedback, make the changes, then launch it on your domain. You don't touch a single line of code.</p>
       </div>
     </div>
@@ -489,8 +489,9 @@
       setTimeout(function () { el.classList.add('visible'); }, base + i * 120);
     });
   }
-  if (document.readyState === 'complete') runHero();
-  else window.addEventListener('load', runHero);
+  /* start on DOM ready, not window load, so the hero doesn't wait on the survey iframe */
+  if (document.readyState !== 'loading') runHero();
+  else document.addEventListener('DOMContentLoaded', runHero);
 
   /* ---------- Scroll reveals ---------- */
   function tag(sel, cls, stagger) {
